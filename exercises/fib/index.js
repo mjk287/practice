@@ -8,6 +8,15 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function fib(n) {
+  // intial case for first and second entry
+  const fibArr = [0, 1]
+
+  for (let i = 1; i < n; i++){
+    fibArr.push(fibArr[i] + fibArr[i - 1])
+  }
+
+  return fibArr[n]
+}
 
 module.exports = fib;

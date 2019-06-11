@@ -8,7 +8,7 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-  const vowels = str.match(/[a, e, i, o, u]/gi)
+  const vowels = str.match(/[aeiou]/gi)
 
   if (!vowels){
     return 0

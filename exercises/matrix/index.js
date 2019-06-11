@@ -15,6 +15,17 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-function matrix(n) {}
+function matrix(n) {
+  // create empty array of arrays with zeroes
+  const emptyArr = []
+  for (let i = 0; i < n; i++){
+    const emptyRow = []
+    for (let i = 0; i < n; i++){
+      emptyRow.push(0)
+    }
+    emptyArr.push(emptyRow)
+  }
+
+}
 
 module.exports = matrix;
