@@ -49,9 +49,33 @@ class LinkedList {
   }
 
   removeFirst(){
+    //check if there is a head so 'this.head.next' won't error out
+    if (!this.head){
+      return
+    }
+
     this.head = this.head.next
+  }
 
+  removeLast(){
+    //check if there is a head as well as a succeeding node
 
+    if (!this.head){
+      return
+    } else if (!this.head.next){
+      return this.head = null
+    }
+
+    let prevNode = this.head
+    let currentNode = this.head.next
+
+    //iterate until we hit the last node
+    while(!!currentNode.next){
+      prevNode = currentNode
+      currentNode = currentNode.next
+    }
+
+    return prevNode.next = null
   }
 }
 
