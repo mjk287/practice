@@ -26,6 +26,13 @@ function matrix(n) {
     emptyArr.push(emptyRow)
   }
 
+  // [[0, 0, 0],
+  // [0, 0, 0],
+  // [0, 0, 0]]
+
+  for (let row = 0; row < emptyArr.length; row++)
+  
+
 }
 
 module.exports = matrix;
