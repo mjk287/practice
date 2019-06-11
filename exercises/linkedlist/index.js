@@ -77,6 +77,17 @@ class LinkedList {
 
     return prevNode.next = null
   }
+
+  insertLast(data){
+    //check to see if list is empty
+    const newNode = new Node(data)
+
+    if (!this.getLast()){
+      return this.head = newNode
+    }
+
+    this.getLast().next = newNode
+  }
 }
 
 
