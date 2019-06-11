@@ -37,6 +37,10 @@ class LinkedList {
   getLast(){
     let currentNode = this.head
 
+    if(!currentNode){
+      return null
+    }
+
     while(!!currentNode.next){
       currentNode = currentNode.next
     }
@@ -88,7 +92,41 @@ class LinkedList {
 
     this.getLast().next = newNode
   }
+
+  getAt(index){
+    let counter = 0
+    let currentNode = this.head
+
+    while (!!currentNode){
+      if (counter === index){
+        return currentNode
+      } else {
+      currentNode = currentNode.next
+      counter++
+      }
+    }
+
+    return null
+  }
+
+  // getAt(index){
+  //   let counter = 0
+  //   let currentNode = this.head
+  //
+  //   if(!currentNode || index >= this.size()){
+  //     return null
+  //   }
+  //
+  //   while (counter < index){
+  //     currentNode = currentNode.next
+  //     counter++
+  //   }
+  //
+  //   return currentNode
+  // }
 }
+
+
 
 
 module.exports = { Node, LinkedList };
