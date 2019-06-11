@@ -17,6 +17,19 @@ class LinkedList {
   insertFirst(data){
     this.head = new Node(data, this.head)
   }
+
+  size(){
+    let counter = 0
+    let currentNode = this.head
+
+    while (!!currentNode){
+      currentNode = currentNode.next
+      counter++
+    }
+
+    return counter
+
+  }
 }
 
 
