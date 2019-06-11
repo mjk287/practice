@@ -43,6 +43,10 @@ class LinkedList {
 
     return currentNode
   }
+
+  clear(){
+    this.head = null
+  }
 }
 
 
