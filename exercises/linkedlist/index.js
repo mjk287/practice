@@ -28,7 +28,20 @@ class LinkedList {
     }
 
     return counter
+  }
 
+  getFirst(){
+    return this.head
+  }
+
+  getLast(){
+    let currentNode = this.head
+
+    while(!!currentNode.next){
+      currentNode = currentNode.next
+    }
+
+    return currentNode
   }
 }
 
