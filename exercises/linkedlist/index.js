@@ -124,9 +124,50 @@ class LinkedList {
   //
   //   return currentNode
   // }
+
+  removeAt(index){
+    //edge cases to be weary of: first index, out of bounds index, index at size + 1, list is empty
+    let prevNode
+
+    //check for empty list
+    if(!this.head){
+      return null
+    }
+
+    //check for first index
+    if(index === 0){
+      return this.head = this.head.next
+    }
+
+    prevNode = this.getAt(index - 1)
+    //out of bounds
+    if (!!prevNode && !!prevNode.next){
+      const nodeToDelete = prevNode.next
+      prevNode.next = nodeToDelete.next
+    }
+  }
+
+  insertAt(data, index){
+    //check for edge cases: empty list, first index, out of bounds
+    if(!this.head || index === 0){
+      this.insertFirst(data)
+      return
+    }
+
+    const prevNode = this.getAt(index - 1)
+
+    if(!!prevNode && !!prevNode.next){
+      const node = new Node(data, prevNode.next)
+      prevNode.next = node
+    } else {
+      this.insertLast(data)
+    }
+
+
+
+
+  }
 }
-
-
 
 
 module.exports = { Node, LinkedList };
