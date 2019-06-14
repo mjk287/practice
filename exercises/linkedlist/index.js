@@ -163,9 +163,26 @@ class LinkedList {
       this.insertLast(data)
     }
 
+  }
 
+  forEach(task){
+    let currentNode = this.head
 
+    while (!!currentNode){
+      task(currentNode)
+      currentNode = currentNode.next
+    }
 
+    return
+  }
+
+  *[Symbol.iterator](){
+    let currentNode = this.head
+
+    while(!!currentNode){
+      yield currentNode
+      currentNode = currentNode.next
+    }
   }
 }
 
